@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="مربی من">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<title>مربی من | برنامه ۳ ماهه بدنسازی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6f5;--ink:#12303a;--mut:#55707a;--card:#fff;--acc:#0e9c8c;--gold:#e9b44c;--line:#d5e0de;--fig:#12303a;--bd:#5d8797;--ol:#12303a;--hot:#e4572e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1c20;--ink:#e6f0ee;--mut:#9bb3b8;--card:#172a30;--acc:#2cc4b2;--line:#27424a;--fig:#e6f0ee;--bd:#8fb3bd;--ol:#0b1417;--hot:#ff7a45}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.8}
+main{max-width:680px;margin:0 auto;padding:16px 14px 48px}
+h1{font-size:26px;font-weight:800;margin:6px 0 2px}h2{font-size:18px;margin:14px 0 6px}
+.sub{color:var(--mut);margin:0 0 12px}
+.tabs,.months{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px}
+button{font:inherit;font-weight:600;border:1px solid var(--line);border-radius:10px;padding:8px 14px;background:var(--card);color:var(--ink);cursor:pointer;white-space:nowrap}
+button[aria-selected=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:8px 0;padding:8px 12px}
+summary{cursor:pointer;font-weight:700}summary small{color:var(--mut);font-weight:400;display:block}
+.ex{display:flex;gap:12px;align-items:center;padding:8px 0;border-top:1px dashed var(--line)}
+.ex svg{width:120px;height:120px;flex:none;background:var(--bg);border-radius:10px}
+.ex b{display:block}.ex small{color:var(--mut);display:block}
+ul{padding-right:20px;margin:4px 0}.ok li::marker{color:#1f9d55}.no li::marker{color:#c0392b}
+.warn{font-size:13px;color:var(--mut);border-top:1px dashed var(--line);margin-top:8px;padding-top:6px}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+.wrap{overflow-x:auto}a.v{display:inline-block;margin:2px 0 0 6px;font-size:13px;font-weight:600;color:var(--acc);text-decoration:none;border:1px solid var(--acc);border-radius:8px;padding:0 10px}a.v:focus-visible,a.v:hover{background:var(--acc);color:#fff;outline:none}[hidden]{display:none!important}
+:root,:root:not([data-theme="light"]){--bg:#000;--card:#000;--ink:#eaf6ff;--mut:#8fb0c4;--acc:#19c3ff;--neon:#19e0ff;--line:#0f4a63;--fig:#eaf6ff;--bd:#9fc3d3;--ol:#02060a;--hot:#ff7a45}
+body{background:#000}
+h1,h2{text-shadow:0 0 10px rgba(25,224,255,.6)}
+.card,details{background:#000;border:1.5px solid var(--neon);box-shadow:0 0 8px rgba(25,224,255,.55),inset 0 0 10px rgba(25,224,255,.12)}
+button{background:#000;border:1.5px solid var(--neon);color:var(--ink);box-shadow:0 0 6px rgba(25,224,255,.4)}
+button[aria-selected=true]{background:var(--neon);color:#000;border-color:var(--neon);box-shadow:0 0 12px var(--neon)}
+.ex svg{background:#03080c;border:1px solid var(--neon);box-shadow:0 0 6px rgba(25,224,255,.35)}
+a.v{color:var(--neon);border-color:var(--neon);box-shadow:0 0 5px rgba(25,224,255,.4)}
+a.v:hover,a.v:focus-visible{background:var(--neon);color:#000}
+table,td,th{border-color:var(--line)}
+body{background:radial-gradient(900px 500px at 50% -10%,rgba(25,224,255,.18),transparent 60%),radial-gradient(600px 400px at 100% 45%,rgba(124,92,255,.14),transparent 60%),#000}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(25,224,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(25,224,255,.07) 1px,transparent 1px);background-size:36px 36px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%);pointer-events:none;z-index:0}
+main{position:relative;z-index:1}
+.card,details{position:relative}
+.card::before,.card::after{content:'';position:absolute;width:12px;height:12px;border:2px solid var(--neon);pointer-events:none}
+.card::before{top:-2px;right:-2px;border-left:0;border-bottom:0}
+.card::after{bottom:-2px;left:-2px;border-right:0;border-top:0}
+.hero{position:relative;overflow:hidden;padding:20px 16px 12px;margin:6px 0 12px;border-radius:18px;background:linear-gradient(160deg,rgba(25,224,255,.12),rgba(0,0,0,.3));border:1.5px solid var(--neon);box-shadow:0 0 24px rgba(25,224,255,.4),inset 0 0 18px rgba(25,224,255,.1)}
+.hero::after{content:'';position:absolute;top:0;bottom:0;left:-90px;width:70px;background:linear-gradient(90deg,transparent,rgba(25,224,255,.28),transparent);transform:skewX(-20deg);animation:sw 4.5s linear infinite;pointer-events:none}
+@keyframes sw{to{left:115%}}
+.badge{display:inline-block;font-size:12px;font-weight:800;color:#000;background:var(--neon);border-radius:20px;padding:0 12px;box-shadow:0 0 10px var(--neon)}
+.hero h1{font-size:44px;margin:6px 0 0;background:linear-gradient(90deg,#19e0ff,#7c5cff,#19e0ff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;animation:gl 5s linear infinite}
+@keyframes gl{to{background-position:-200% 0}}
+.type{min-height:30px;color:var(--neon);font-weight:600}
+.type::after{content:'\258C';animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.stats div{border:1px solid var(--neon);border-radius:12px;text-align:center;padding:6px 2px;background:rgba(25,224,255,.07)}
+.stats b{display:block;font-size:26px;line-height:1.4;color:var(--neon);text-shadow:0 0 10px var(--neon)}
+.stats span{font-size:12px;color:var(--mut)}
+.ctas{display:flex;gap:8px;flex-wrap:wrap}
+.cta{flex:1;text-align:center;text-decoration:none;font:inherit;font-weight:800;border-radius:12px;padding:10px 14px;cursor:pointer;animation:pu 2.4s ease-in-out infinite}
+.cta.p{background:var(--neon);color:#000;border:0}
+.cta.s{border:1.5px solid var(--neon);color:var(--neon);background:#000}
+@keyframes pu{50%{box-shadow:0 0 20px var(--neon)}}
+.tick{overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:12px 0 2px;color:var(--mut);font-size:13px}
+.tick div{display:inline-block;animation:tk 26s linear infinite}
+@keyframes tk{to{transform:translateX(50%)}}
+@media (prefers-reduced-motion:reduce){*,*::after{animation:none!important}}
+a.src{display:block;border:1px solid var(--neon);border-radius:10px;padding:6px 10px;margin:6px 0;color:var(--ink);text-decoration:none}a.src b{color:var(--neon)}a.src small{display:block;color:var(--mut)}a.src:hover,a.src:focus-visible{box-shadow:0 0 10px var(--neon);outline:none}
+</style></head><body><main>
+<section class='hero'><span class='badge'>برنامه ۳ ماهه • آموزش تصویری</span><h1>مربی من</h1><div class='type' id='type' aria-live='off'></div><div class='stats'><div><b data-n='7'>0</b><span>روز برنامه</span></div><div><b data-n='3'>0</b><span>ماه، هر ماه متفاوت</span></div><div><b id='nex' data-n='0'>0</b><span>حرکت متحرک</span></div></div><div class='ctas'><button class='cta p' id='cta'>شروع برنامه ◂</button><a class='cta s' target='_blank' rel='noopener noreferrer' href='https://t.me/meroo_gym'>کانال تلگرام</a></div><div class='tick'><div id='tickd'></div></div></section>
+<p class="sub">برنامه ۳ ماهه تمرین، اصلاحی و تغذیه؛ هر حرکت با انیمیشن سبک (بدون دانلود تصویر).</p>
+<div class="tabs" id="tabs" role="tablist"></div>
+<div id="view"></div>
+</main>
+<script>
+// ---- poses: [x,y,torso,thigh,shin,upperArm,foreArm,head] ; A, B, cue
+var STD=[50,54,0,0,0,0,0];
+var PZ={
+curl:[STD.concat(0).map((v,i)=>i==5?5:v),[50,54,0,0,0,5,150],"آرنج ثابت کنار بدن؛ پایین‌آوردن آهسته ۳ ثانیه"],
+raise:[STD,[50,54,0,0,0,85,85],"تا ارتفاع شانه، بدون تاب‌دادن بدن"],
+press:[[50,54,0,0,0,70,175],[50,54,0,0,0,178,178],"شکم سفت؛ کمر قوس نگیرد"],
+goblet:[[50,54,0,0,0,25,150],[36,73,35,80,-20,25,150],"دمبل نزدیک سینه؛ زانو در راستای پنجه، کمر صاف، پاشنه روی زمین"],
+squat:[STD,[36,73,35,80,-20,90,90],"زانو در راستای پنجه، کمر صاف، پاشنه روی زمین"],
+hinge:[STD,[42,54,75,12,0,0,0],"باسن به عقب، کمر خنثی، وزنه نزدیک پا"],
+row:[[44,56,70,12,0,0,0],[44,56,70,12,0,-50,5],"کتف‌ها را به هم نزدیک کن؛ بدون تاب"],
+bench:[[56,78,-90,95,10,180,180],[56,78,-90,95,10,25,175],"کتف جمع، پایین تا خط سینه، ۲ ثانیه مکث"],
+pu:[[46,80,-66,66,66,0,0],[46,85,-72,72,72,-60,40],"بدن یک خط صاف؛ آرنج ۴۵ درجه"],
+pull:[[50,52,0,5,0,170,175],[50,38,0,5,10,100,178],"از کتف شروع کن نه از دست؛ پایین‌آوردن کنترل‌شده"],
+pushdown:[[50,54,0,0,0,10,120],[50,54,0,0,0,10,5],"آرنج چسبیده به بدن"],
+oh:[[50,54,0,0,0,175,-60],[50,54,0,0,0,175,178],"آرنج‌ها به سمت بالا و نزدیک سر"],
+cr:[[52,88,-90,130,5,120,40],[52,88,-62,130,5,120,40],"کوتاه‌شدن شکم؛ گردن را نکش"],
+pl:[[48,83,-70,70,70,0,90],[48,81,-72,72,72,0,90],"شکم و باسن سفت؛ ۳۰ تا ۴۵ ثانیه"],
+bridge:[[52,88,-90,120,5,90,90],[52,72,-115,120,5,90,90],"باسن را بالا فشار بده؛ ۱ ثانیه مکث"],
+calf:[STD,[50,48,0,0,0,0,0],"تا بالاترین نقطه، ۲ ثانیه مکث"],
+apart:[[50,54,0,0,0,90,90],[50,54,0,0,0,40,60],"کتف‌ها را به هم نزدیک کن؛ شانه بالا نیاید"],
+angel:[[50,54,0,0,0,20,170],[50,54,0,0,0,178,178],"پشت به دیوار؛ آرام و بدون درد"],
+cat:[[66,70,-98,0,90,0,0],[66,70,-82,0,90,0,0],"با نفس؛ ۱۰ تکرار آرام"],
+neck:[STD,[50,54,0,0,0,0,0,45],"۲۰ تا ۳۰ ثانیه هر طرف؛ شانه پایین"],
+ext:[[50,54,0,0,0,150,-60],[50,54,-25,0,0,150,-60],"دست پشت سر؛ فقط ستون سینه‌ای خم شود"],
+pen:[[44,56,70,12,0,-20,-20],[44,56,70,12,0,20,20],"بازو شل؛ حرکت آونگی کوچک"]
+};
+// ---- exercises: id:[name,pose,equip] equip: b=هالتر d=دمبل f/w/t=کش ''=بدون وسیله
+var X={bp:["پرس سینه هالتر","bench","b"],dp:["پرس سینه دمبل","bench","d"],ip:["پرس بالاسینه دمبل","bench","d"],pu:["شنا","pu",""],
+cu:["جلو بازو دمبل","curl","d"],cb:["جلو بازو هالتر","curl","b"],cc:["جلو بازو با کش","curl","f"],
+gs:["اسکوات گابلت","goblet","d"],sq:["اسکوات هالتر","squat","b"],bs:["اسکوات وزن بدن","squat",""],bS:["اسکوات با کش","squat","f"],
+rd:["ددلیفت رومانیایی هالتر","hinge","b"],rD:["ددلیفت رومانیایی دمبل","hinge","d"],hf:["کشش همسترینگ","hinge",""],
+ht:["هیپ‌تراست","bridge","b"],br:["پل باسن","bridge",""],ca:["ساق ایستاده دمبل","calf","d"],cy:["ساق وزن بدن","calf",""],
+op:["پرس سرشانه دمبل","press","d"],obp:["پرس سرشانه هالتر","press","b"],bP:["پرس سرشانه با کش","press","f"],
+lr:["نشر جانب دمبل","raise","d"],fr:["نشر جلو دمبل","raise","d"],bL:["نشر جانب با کش","raise","f"],
+fp:["فیس‌پول با کش","apart","w"],pa:["باز کردن کش (پول‌اپارت)","apart","w"],sc:["جمع‌کردن کتف‌ها","apart",""],
+cr:["کرانچ","cr",""],pl:["پلانک","pl",""],
+pd:["زیربغل سیم‌کش / لت","pull","t"],bC:["زیربغل با کش","pull","t"],pup:["بارفیکس","pull",""],
+ro:["پارویی هالتر","row","b"],r1:["پارویی تک‌دمبل","row","d"],bR:["پارویی با کش","row","w"],
+tp:["پشت بازو سیم‌کش یا کش","pushdown","t"],ox:["پشت بازو دمبل بالای سر","oh","d"],
+ne:["کشش گردن","neck",""],te:["باز کردن ستون سینه‌ای","ext",""],ct:["گربه-گاو","cat",""],an:["فرشته دیواری","angel",""],pe:["آونگ شانه","pen",""]};
+// ---- 3-month plan: month -> days (شنبه..جمعه)
+var DAYS=[["شنبه","سینه و جلو بازو"],["یکشنبه","پا"],["دوشنبه","سرشانه و شکم"],["سه‌شنبه","کششی و قدرتی"],["چهارشنبه","زیربغل و پشت بازو"],["پنجشنبه","سینه و سرشانه (زاویه جدید)"],["جمعه","فول‌بادی"]];
+var PLAN=[
+ [["dp","ip","pu","cu","cc"],["gs","rD","bs","br","ca"],["op","lr","fr","fp","cr","pl"],["ne","te","ct","an","hf","pl","br"],["pd","r1","bR","tp","ox"],["pu","dp","op","lr"],["gs","pu","r1","op","rD","pl"]],
+ [["bp","ip","pu","cb","cu"],["sq","rd","gs","ht","ca"],["obp","lr","fr","fp","cr","pl"],["pe","te","ct","an","hf","pl","br"],["pup","ro","pd","tp","ox"],["ip","op","lr","pu"],["sq","bp","ro","obp","rd","pl"]],
+ [["bp","ip","pu","cb","cu","cc"],["sq","rd","ht","gs","ca"],["obp","op","lr","fp","cr","pl"],["ne","te","ct","an","hf","pl","br"],["pup","ro","r1","tp","ox"],["dp","op","fr","lr","pu"],["sq","rd","bp","pup","obp","pl"]]];
+var MON=[["ماه اول: تطبیق و تکنیک","۳ ست × ۱۲ تکرار، استراحت ۶۰ ثانیه، سرعت پایین‌آمدن ۳ ثانیه. وزنه سبک تا متوسط؛ ۲ تکرار تا ناتوانی باقی بماند."],
+["ماه دوم: حجم و هایپرتروفی","۴ ست × ۸ تا ۱۰ تکرار، استراحت ۹۰ ثانیه. وزنه را هر هفته ۲ تا ۵٪ زیاد کن (اضافه‌بار تدریجی)."],
+["ماه سوم: قدرت و شدت","حرکات اصلی ۵ ست × ۵ تکرار با استراحت ۲ تا ۳ دقیقه؛ حرکات فرعی ۳ ست × ۱۰ تا ۱۲. هفته چهارم سبک‌تر (دیلود) برای ریکاوری."]];
+// ---- animation
+var R=Math.PI/180;function up(a){return[Math.sin(a*R),-Math.cos(a*R)]}function dn(a){return[Math.sin(a*R),Math.cos(a*R)]}
+function fk(p){var x=p[0],y=p[1],u=up(p[2]),N=[x+26*u[0],y+26*u[1]],h=up(p[2]+(p[7]||0)),H=[N[0]+9*h[0],N[1]+9*h[1]],a=dn(p[3]),K=[x+22*a[0],y+22*a[1]],b=dn(p[4]),F=[K[0]+22*b[0],K[1]+22*b[1]],c=dn(p[5]),E=[N[0]+14*c[0],N[1]+14*c[1]],d=dn(p[6]),W=[E[0]+14*d[0],E[1]+14*d[1]];return{P:[x,y],N:N,H:H,K:K,F:F,E:E,W:W}}
+function ln(a,b){return'<line x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'"/>'}
+var MU={curl:["دوسر بازو",["ua"]],raise:["سرشانه",["sh","ua"]],press:["سرشانه و پشت بازو",["sh","ua"]],squat:["چهارسر ران و باسن",["th","hp"]],goblet:["چهارسر ران و باسن",["th","hp"]],hinge:["همسترینگ و کمر",["th","tl"]],row:["زیربغل و پشت شانه",["tu","ua"]],bench:["سینه",["tu","sh"]],pu:["سینه و پشت بازو",["tu","ua"]],pull:["زیربغل",["tu","ua"]],pushdown:["پشت بازو",["ua","fa"]],oh:["پشت بازو",["ua"]],cr:["شکم",["tl"]],pl:["شکم و مرکز بدن",["tl","tu"]],bridge:["باسن",["hp","th"]],calf:["ساق پا",["sn"]],apart:["پشت شانه و کتف",["tu","sh"]],angel:["کتف و شانه",["sh","tu"]],cat:["ستون فقرات",["tt"]],neck:["گردن",["nk"]],ext:["ستون سینه‌ای",["tu"]],pen:["شانه",["sh"]]};
+function sg(a,b,w,c){var q=' x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'" stroke-linecap="round"';return'<line'+q+' stroke="var(--ol)" stroke-width="'+(w+2.4)+'"/><line'+q+' stroke="'+c+'" stroke-width="'+w+'"/>'}
+function ci(p,r,c){return'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+r+'" fill="'+c+'" stroke="var(--ol)" stroke-width="1.2"/>'}
+function frame(el,u){var A=el._a,B=el._b,p=A.map(function(v,i){return v+((B[i]||0)-v)*u}),f=fk(p),eq=el._e,pz=el._p,M=MU[pz][1],O=function(a,x,y){return[a[0]+x,a[1]+y]},
+ hot=function(k){return M.indexOf(k)>-1||M.indexOf("tt")>-1&&(k=="tu"||k=="tl")?"var(--hot)":"var(--bd)"},
+ ax=[f.N[0]-f.P[0],f.N[1]-f.P[1]],nn=[-ax[1]/26,ax[0]/26];
+ function tp(f0,f1,c){var P=f.P,w0=4.6+2.6*f0,w1=4.6+2.6*f1,a=[P[0]+ax[0]*f0,P[1]+ax[1]*f0],b=[P[0]+ax[0]*f1,P[1]+ax[1]*f1],pt=[[a[0]+nn[0]*w0,a[1]+nn[1]*w0],[b[0]+nn[0]*w1,b[1]+nn[1]*w1],[b[0]-nn[0]*w1,b[1]-nn[1]*w1],[a[0]-nn[0]*w0,a[1]-nn[1]*w0]];return'<polygon points="'+pt.join(" ")+'" fill="'+c+'" stroke="'+(c=="var(--bd)"?"var(--ol)":c)+'" stroke-width="1.6" stroke-linejoin="round"/>'}
+ var g='<line x1="0" y1="98.5" x2="100" y2="98.5" stroke="var(--line)" stroke-width="1.5"/>';
+ if(pz=="bench"){var by=f.P[1]+8;g+='<rect x="'+(f.N[0]-18)+'" y="'+by+'" width="50" height="5" rx="2" fill="var(--line)" stroke="var(--ol)"/><line x1="'+(f.N[0]-10)+'" y1="'+(by+5)+'" x2="'+(f.N[0]-10)+'" y2="98" stroke="var(--ol)" stroke-width="2"/><line x1="'+(f.N[0]+22)+'" y1="'+(by+5)+'" x2="'+(f.N[0]+22)+'" y2="98" stroke="var(--ol)" stroke-width="2"/>'}
+ g+='<g opacity=".5">'+sg(O(f.N,2.5,-1),O(f.E,2.5,-1),5,"var(--bd)")+sg(O(f.E,2.5,-1),O(f.W,2.5,-1),4,"var(--bd)")+sg(O(f.P,3,0),O(f.K,3,0),7,"var(--bd)")+sg(O(f.K,3,0),O(f.F,3,0),5.5,"var(--bd)")+'</g>';
+ g+=tp(0,1,"var(--bd)");
+ if(hot("tu")=="var(--hot)")g+=tp(.5,1,"var(--hot)");if(hot("tl")=="var(--hot)")g+=tp(0,.5,"var(--hot)");
+ g+=sg(f.P,f.K,8,hot("th"))+sg(f.K,f.F,6,hot("sn"))+sg(f.F,O(f.F,6,0),3.5,"var(--bd)");
+ if(hot("hp")=="var(--hot)")g+=ci(f.P,6.5,"var(--hot)");
+ g+=sg(f.N,f.E,5.5,hot("ua"))+sg(f.E,f.W,4.5,hot("fa"))+ci(f.W,2.6,"var(--bd)");
+ g+=ci(f.N,hot("sh")=="var(--hot)"?6.5:4.5,hot("sh"));
+ g+=sg(O(f.N,0,0),f.H,3.5,hot("nk"))+ci(f.H,6,"var(--bd)");
+ var q=pz=="squat"&&eq=="b"?f.N:pz=="bridge"?O(f.P,0,-6):f.W;
+ if(eq=="d")g+='<rect x="'+(q[0]-5.5)+'" y="'+(q[1]-3.2)+'" width="11" height="6.4" rx="2" fill="var(--acc)" stroke="var(--ol)" stroke-width="1.3"/>';
+ if(eq=="b")g+='<circle cx="'+q[0]+'" cy="'+q[1]+'" r="9" fill="none" stroke="var(--acc)" stroke-width="3.5"/>'+ci(q,2.6,"var(--ol)");
+ if(eq=="f"||eq=="w"||eq=="t"){var an=eq=="f"?f.F:eq=="w"?[97,f.W[1]]:[50,-3];g+='<line x1="'+q[0]+'" y1="'+q[1]+'" x2="'+an[0]+'" y2="'+an[1]+'" stroke="var(--gold)" stroke-width="2.4" stroke-dasharray="4 2"/>'}
+ el.innerHTML=g}
+var still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function ez(t){var a=(1-Math.cos(t/1000))/2;return Math.min(1,Math.max(0,(a-.12)/.76))}
+function loop(t){document.querySelectorAll("svg.fig").forEach(function(el){if(el.getClientRects().length)frame(el,still?1:ez(t))});requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+var EN={bp:"barbell bench press",dp:"dumbbell bench press",ip:"incline dumbbell press",pu:"push up",cu:"dumbbell bicep curl",cb:"barbell curl",cc:"resistance band bicep curl",gs:"goblet squat",sq:"barbell back squat",bs:"bodyweight squat",bS:"resistance band squat",rd:"barbell romanian deadlift",rD:"dumbbell romanian deadlift",hf:"standing hamstring stretch",ht:"barbell hip thrust",br:"glute bridge",ca:"standing dumbbell calf raise",cy:"bodyweight calf raise",op:"dumbbell shoulder press",obp:"barbell overhead press",bP:"resistance band overhead press",lr:"dumbbell lateral raise",fr:"dumbbell front raise",bL:"resistance band lateral raise",fp:"band face pull",pa:"resistance band pull apart",sc:"scapular retraction exercise",cr:"crunch",pl:"plank",pd:"lat pulldown",bC:"resistance band lat pulldown",pup:"pull up",ro:"barbell bent over row",r1:"single arm dumbbell row",bR:"resistance band row",tp:"triceps pushdown",ox:"dumbbell overhead triceps extension",ne:"neck stretch",te:"thoracic spine extension",ct:"cat cow stretch",an:"wall angel exercise",pe:"shoulder pendulum exercise"};
+function vid(id){var q=encodeURIComponent(EN[id]+' proper form tutorial'),a='<a class="v" target="_blank" rel="noopener noreferrer" href="';return a+'https://www.youtube.com/results?search_query='+q+'">▶ یوتیوب</a>'+a+'https://www.google.com/search?tbm=vid&q='+q+'">گوگل (ویدیو)</a>'+a+'https://www.google.com/search?tbm=isch&q='+encodeURIComponent(EN[id]+' form gif')+'">گوگل (گیف)</a>'+a+'https://www.google.com/search?q='+encodeURIComponent(X[id][0]+' آموزش حرکت')+'">گوگل (فارسی)</a>'}
+function exHTML(id){var x=X[id],z=PZ[x[1]];window._n=(window._n||0)+1;
+ return'<div class="ex"><svg class="fig" viewBox="0 -4 100 104" data-p="'+x[1]+'" data-e="'+x[2]+'" role="img" aria-label="'+x[0]+'"></svg><div><b>'+x[0]+'</b><small>'+z[2]+'</small><small style="color:var(--hot)">عضله هدف: '+MU[x[1]][0]+'</small>'+vid(id)+'</div></div>'}
+function hydrate(){document.querySelectorAll("svg.fig:not([data-ok])").forEach(function(el){var z=PZ[el.dataset.p];el._p=el.dataset.p;el._a=z[0];el._b=z[1];el._e=el.dataset.e;el.dataset.ok=1;frame(el,0)})}
+function list(ids,note){return(note?'<p class="sub">'+note+'</p>':'')+'<div class="card">'+ids.map(exHTML).join("")+'</div>'}
+// ---- sections
+var month=0,S={};
+S.plan=function(){var h='<div class="months">'+MON.map(function(m,i){return'<button data-m="'+i+'" aria-selected="'+(i==month)+'">ماه '+(i+1)+'</button>'}).join("")+'</div><div class="card"><b>'+MON[month][0]+'</b><br>'+MON[month][1]+'<div class="warn">هر روز را هر زمان از شبانه‌روز که دلت خواست انجام بده. ۱۰ دقیقه گرم‌کردن (دویدن آرام و چرخش مفاصل) و ۵ دقیقه سردکردن را فراموش نکن. هر حرکت را برای دیدن انیمیشن باز کن.</div></div>';
+ PLAN[month].forEach(function(d,i){h+='<details><summary>'+DAYS[i][0]+': '+DAYS[i][1]+'<small>'+d.length+' حرکت</small></summary>'+d.map(exHTML).join("")+'</details>'});return h};
+S.food=function(){var D=[["شنبه","املت ۳ تخم‌مرغ + نان سنگک + پنیر و سبزی","مرغ گریل + برنج + سالاد","ماست یونانی + گردو","ماهی یا مرغ + سبزیجات بخارپز"],
+["یکشنبه (روز پا؛ کربوهیدرات بیشتر)","جو دوسر + شیر + موز + عسل","گوشت کم‌چرب + برنج + سالاد","خرما + شیر قبل تمرین","مرغ + سیب‌زمینی پخته + سبزیجات"],
+["دوشنبه","نیمرو ۲ تخم‌مرغ + نان + گوجه","ماهی + برنج + سبزی","پنیر کم‌چرب + میوه","عدسی + سالاد + ماست"],
+["سه‌شنبه (روز سبک؛ کربوهیدرات کمتر)","پنیر کم‌چرب + گردو + نان سنگک","مرغ + سبزیجات + کمی برنج","کشک بادام + بادام‌زمینی","املت سبزیجات + سالاد"],
+["چهارشنبه","املت + نان + چای","گوشت + برنج + سالاد شیرازی","کره بادام‌زمینی + نان","مرغ + ماکارونی کامل + سبزی"],
+["پنجشنبه","جو دوسر + تخم‌مرغ آب‌پز","ماهی + برنج + سبزی","ماست + میوه","خوراک لوبیا + مرغ"],
+["جمعه (فول‌بادی)","املت ۳ تخم‌مرغ + نان + خرما","کباب لقمه یا مرغ + برنج + سالاد","شیر + موز","سوپ جو + سالاد + ماست"]];
+ return'<div class="card"><b>اصول علمی</b><ul><li>پروتئین: ۱٫۶ تا ۲٫۲ گرم به ازای هر کیلو وزن بدن، در ۳ تا ۵ وعده</li><li>کربوهیدرات: ۳ تا ۶ گرم به ازای هر کیلو؛ روزهای پا و فول‌بادی بیشتر</li><li>چربی: حدود ۰٫۸ تا ۱ گرم به ازای هر کیلو</li><li>آب: ۳۵ میلی‌لیتر به ازای هر کیلو</li></ul></div><div class="card"><b>تنظیم برای سه ماه</b><ul><li>ماه اول: کالری نگهدارنده (وزن ثابت)</li><li>ماه دوم: ۱۰٪ بیشتر برای حجم‌گیری</li><li>ماه سوم: همان کالری ماه دوم؛ اگر وزن بیش از ۰٫۵٪ در هفته زیاد شد، ۱۰۰ تا ۲۰۰ کالری کم کن</li></ul></div><div class="wrap"><table><tr><th>روز</th><th>صبحانه</th><th>ناهار</th><th>میان‌وعده</th><th>شام</th></tr>'+D.map(function(r){return'<tr>'+r.map(function(c){return'<td>'+c+'</td>'}).join("")+'</tr>'}).join("")+'</table></div><div class="warn">مقدار هر وعده را با وزن و هدفت تنظیم کن. با بیماری، دارو یا جراحی، برنامه را با پزشک یا متخصص تغذیه بررسی کن.</div>'};
+S.supp=function(){return'<div class="card"><b>قبل از تمرین (۳۰ تا ۶۰ دقیقه)</b><ul><li>کافئین: ۳ تا ۶ میلی‌گرم به ازای هر کیلو، حداکثر ۴۰۰ میلی‌گرم در روز؛ بعد از ساعت ۱۶ نخور</li><li>سیترولین مالات: ۶ تا ۸ گرم برای پمپ و استقامت</li><li>کربوهیدرات سریع (خرما، موز): ۳۰ تا ۶۰ گرم</li><li>آب: ۵۰۰ میلی‌لیتر</li></ul></div><div class="card"><b>بعد از تمرین (تا ۲ ساعت)</b><ul><li>پروتئین وی یا غذای پروتئینی: ۲۰ تا ۴۰ گرم</li><li>کربوهیدرات: ۰٫۵ تا ۱ گرم به ازای هر کیلو، مخصوصاً بعد از روز پا</li><li>الکترولیت و آب، در تمرین طولانی یا هوای گرم</li></ul></div><div class="card"><b>روزانه (زمانش مهم نیست)</b><ul><li>کراتین مونوهیدرات: ۳ تا ۵ گرم</li><li>امگا ۳: همراه غذا</li><li>ویتامین D و منیزیم: بعد از آزمایش و با نظر پزشک</li></ul></div><div class="warn">مکمل جای غذا را نمی‌گیرد. با سابقه دارو، بیماری یا جراحی، قبل از مصرف با پزشک مشورت کن.</div>'};
+S.rules=function(){return'<div class="card ok"><b>بایدها</b><ul><li>۷ تا ۹ ساعت بخواب؛ رشد عضله در ریکاوری اتفاق می‌افتد</li><li>گرم‌کردن قبل از هر جلسه</li><li>تکنیک مهم‌تر از وزنه است</li><li>اضافه‌بار تدریجی، هفته به هفته</li><li>هر عضله را ۲ بار در هفته تمرین بده</li><li>پروتئین کافی و آب فراوان</li><li>تمرین‌ها را یادداشت کن</li></ul></div><div class="card no"><b>نبایدها</b><ul><li>با درد مفصل یا تیز تمرین نکن</li><li>هر روز با شدت بالا سراغ یک عضله نرو</li><li>مقایسه با دیگران و پرش از گرم‌کردن ممنوع</li><li>جایگزین‌کردن غذا با مکمل</li><li>استفاده از استروئید یا داروی هورمونی بدون نظر پزشک؛ خطر برای قلب، کبد و باروری</li><li>خوابیدن کم و دیر</li><li>وزنه سنگین با فرم خراب</li></ul></div>'};
+S.db=function(){return list(["dp","ip","op","lr","fr","cu","ox","r1","gs","rD","ca"],"تمرینات با دمبل")};
+S.band=function(){return list(["cc","bR","bP","bS","bL","bC","pa","tp"],"تمرینات با کش تمرینی (خط زرد‌رنگ کش است)")};
+S.bw=function(){return list(["pu","bs","br","cy","cr","pl"],"بدون هیچ وسیله‌ای؛ در خانه یا هتل")};
+S.drv=function(){return list(["ne","sc","te","an","hf"],"رانندگان: هر ۹۰ دقیقه توقف کن، ۵ دقیقه راه برو و این حرکات را انجام بده. صندلی را طوری تنظیم کن که زانو کمی پایین‌تر از لگن باشد.")};
+S.hair=function(){return list(["ne","sc","an","te","ct","pa","bR","pe"],"تکنسین کاشت مو: خم‌شدن طولانی روی بیمار گردن، شانه و کتف را درگیر می‌کند. بین دو بیمار یا هر ۴۵ دقیقه، ۳ تا ۴ حرکت انجام بده و ارتفاع صندلی و میز را تنظیم کن.")};
+S.physio=function(){return list(["pe","ne","sc","an","ct","br","hf","te"],"حرکات فیزیوتراپی عمومی برای گردن، شانه و کمر. با درد شدید یا بی‌حسی، به فیزیوتراپ مراجعه کن.")};
+var TIPS=['برای رشد عضله، حدود ۱٫۶ گرم پروتئین به ازای هر کیلو وزن بدن در روز برای بیشتر افراد کافی است؛ بیشتر از ۲٫۲ گرم معمولاً سود اضافه ندارد.','هر عضله را هفته‌ای ۲ بار تمرین بده؛ تکرار تحریک و تمرین تکنیک، رشد را معمولاً بهتر می‌کند.','برای بیشتر افراد، ۱۰ تا ۲۰ ست هفتگی برای هر گروه عضلانی محدوده مناسب رشد است. از ۱۰ شروع کن و آرام زیاد کن.','ست‌ها را با ۱ تا ۳ تکرار مانده تا ناتوانی تمام کن. ناتوانی کامل در هر ست لازم نیست و ریکاوری را خراب می‌کند.','کراتین مونوهیدرات روزانه ۳ تا ۵ گرم یکی از پژوهش‌شده‌ترین مکمل‌هاست و زمان مصرفش مهم نیست.','کشش ایستای طولانی درست قبل از تمرین قدرتی می‌تواند کمی قدرت را کم کند. قبل تمرین کشش پویا و ست‌های سبک بزن و کشش ایستا را برای آخر جلسه بگذار.','کم‌آبی حتی حدود ۲٪ وزن بدن می‌تواند عملکرد تمرین را کم کند. در طول روز مرتب آب بنوش.','کافئین ۳ تا ۶ میلی‌گرم به ازای هر کیلو، حدود ۳۰ تا ۶۰ دقیقه قبل تمرین، عملکرد را بهتر می‌کند. سقف روزانه ۴۰۰ میلی‌گرم است.','رشد بدون اضافه‌بار تدریجی متوقف می‌شود: هر هفته یک تکرار یا کمی وزنه بیشتر، با تکنیک درست.','رشد عضله در محدوده ۶ تا ۳۰ تکرار شبیه است، به شرط اینکه ست‌ها به ناتوانی نزدیک شوند.','پروتئین را بین وعده‌ها پخش کن؛ حدود ۰٫۳ تا ۰٫۴ گرم به ازای هر کیلو در هر وعده.','کمتر از ۷ ساعت خواب، ریکاوری، عملکرد و کنترل اشتها را بدتر می‌کند. هدف ۷ تا ۹ ساعت است.','بعد از هر ۳۰ تا ۶۰ دقیقه نشستن، چند دقیقه بایست یا راه برو. این برای کمر و گردن مهم است.','قبل از حرکت سنگین، یک تا دو ست سبک همان حرکت بزن؛ از گرم‌کردن عمومی مؤثرتر برای تکنیک است.'];
+var ART=[{d:'۱۴ آبان ۱۴۰۵',t:'پروتئین چقدر لازم است؟',b:'مرورهای پژوهشی نشان می‌دهند در افراد تمرین‌کرده، مصرف حدود ۱٫۶ گرم پروتئین به ازای هر کیلو وزن بدن در روز بیشتر سود رشد عضله را می‌دهد. در دوره چربی‌سوزی یا برای افراد پیشرفته، تا ۲٫۲ گرم منطقی است. بیماران کلیوی پیش از افزایش پروتئین باید با پزشک مشورت کنند.'},{d:'۱۴ آبان ۱۴۰۵',t:'هر عضله هفته‌ای چند بار؟',b:'در مرور مطالعات، تمرین هر عضله ۲ بار در هفته معمولاً رشد بهتر یا برابر با ۱ بار نشان داده است. دلیلش فرصت بیشتر برای تحریک عضله و تمرین تکنیک است. برنامه ۷ روزه همین اپ این را رعایت می‌کند: سینه و سرشانه هم شنبه و هم پنجشنبه تمرین می‌شوند.'},{d:'۱۴ آبان ۱۴۰۵',t:'تکرار باقی‌مانده (RIR) چیست؟',b:'یعنی در پایان هر ست، چند تکرار دیگر می‌توانستی بزنی. ست با ۱ تا ۳ تکرار باقی‌مانده تحریک خوبی می‌دهد و خستگی کمتری از ناتوانی کامل می‌سازد. مبتدی‌ها معمولاً تعداد تکرار باقی‌مانده را کمتر از واقعیت تخمین می‌زنند، پس با تجربه دقیق‌تر می‌شود.'},{d:'۱۴ آبان ۱۴۰۵',t:'خواب و رشد عضله',b:'خواب کم ریکاوری، قدرت و کنترل اشتها را بدتر می‌کند. برای ورزشکاران ۷ تا ۹ ساعت خواب توصیه می‌شود. ساعت خواب ثابت، کم‌کردن کافئین بعد از ظهر و تاریکی اتاق به کیفیت خواب کمک می‌کند.'},{d:'۱۴ آبان ۱۴۰۵',t:'نشستن طولانی و کمر',b:'نشستن بدون وقفه، مخصوصاً برای رانندگان و تکنسین‌ها، با سفتی کمر و گردن همراه است. وقفه‌های کوتاه هر ۳۰ تا ۶۰ دقیقه و تقویت عضلات میانی بدن (پلانک، پل باسن) کمک می‌کند. درد مداوم یا بی‌حسی دست و پا نیاز به بررسی پزشک دارد.'}];
+S.sci=function(){var n=TIPS[Math.floor(Date.now()/864e5)%TIPS.length],dt=new Date().toLocaleDateString('fa-IR');return'<div class=card><b>نکته علمی امروز</b> <small style="color:var(--mut)">'+dt+'</small><p>'+n+'</p></div><h2>مقالات و مطالب</h2>'+ART.map(function(a){return'<details><summary>'+a.t+'<small>'+a.d+'</small></summary><p>'+a.b+'</p></details>'}).join('')+'<div class=warn>این مطالب آموزشی‌اند و جایگزین نظر پزشک یا متخصص تغذیه نیستند.</div>'};
+(function(){var B='https://mokamelhaa.ir/',L=function(p,t,d){return'<a class=src target=_blank rel=noopener href='+B+p+'><b>'+t+'</b><small>'+d+'</small></a>'},
+S1=L('all-posts/','کتابخانه مقالات','مقالات تمرین، تغذیه و مکمل در یک جا، با جستجو'),
+S2=L('category/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d9%87-%d8%a8%d8%af%d9%86%d8%b3%d8%a7%d8%b2%db%8c/','برنامه بدنسازی','نمونه برنامه‌ها و راهنمای تمرین'),
+S3=L('category/%d8%b3%db%8c%d8%b3%d8%aa%d9%85-%d9%87%d8%a7%db%8c-%d8%aa%d9%85%d8%b1%db%8c%d9%86%db%8c/','سیستم‌های تمرینی','روش‌های تمرینی مثل سوپرست و دراپ‌ست'),
+S4=L('category/%d9%86%da%a9%d8%a7%d8%aa-%d8%b7%d9%84%d8%a7%db%8c%db%8c/','نکات طلایی','نکته‌های کوتاه و کاربردی'),
+S5=L('10-recipes-for-cooking-chicken/','۱۰ رسیپی پخت مرغ رژیمی','ایده‌هایی برای تنوع در وعده‌های مرغ'),
+S6=L('top10-creatine/','بهترین کراتین برای خرید','نوع ترکیب، مقدار در هر وعده و بررسی کیفیت'),
+S7=L('%d8%a8%d8%a7%d8%af%da%a9%d8%b1%d8%af%da%af%db%8c-%d9%be%d9%84%d9%85%d9%be-%d9%85%da%a9%d9%85%d9%84/','بادکردگی پلمپ مکمل','باد داشتن پلمپ به‌تنهایی نشانه اصالت نیست؛ نکات تشخیص'),
+S8=L('%d9%be%d8%b1%d9%88%d8%aa%d8%a6%db%8c%d9%86-%da%af%db%8c%d8%a7%d9%87%db%8c-%d8%aa%d8%b1%da%a9%db%8c%d8%a8%db%8c/','پروتئین گیاهی ترکیبی','نکات جایگزینی پروتئین گیاهی به جای وی'),
+N='<div class=warn>این لینک‌ها به سایت دیگری می‌روند. من فقط عنوان و خلاصه آن‌ها را دیده‌ام و کل مقاله‌ها را بررسی نکرده‌ام.</div>',
+o1=S.sci,o2=S.supp,o3=S.food;
+S.sci=function(){return o1()+'<h2>مطالعه بیشتر (سایت مکملها)</h2><div class=card>'+S1+S2+S3+S4+N+'</div>'};
+S.supp=function(){return o2()+'<div class=card><b>قبل از خرید مکمل</b>'+S7+S6+S8+N+'</div>'};
+S.food=function(){return o3()+'<div class=card><b>ایده‌های بیشتر</b>'+S5+N+'</div>'};
+})();
+S.contact=function(){var a='<a class="v" target="_blank" rel="noopener noreferrer" href="';return'<div class="card"><b>اینستاگرام</b><p class="sub">آموزش‌ها و تمرین‌های بیشتر را از صفحات من دنبال کن.</p>'+a+'https://www.instagram.com/meroo_technique/">@meroo_technique</a>'+a+'https://www.instagram.com/its_merootechnique/">@its_merootechnique</a></div><div class="card"><b>کانال تلگرام</b><p class="sub">برنامه‌ها و نکات جدید در کانال.</p>'+a+'https://t.me/meroo_gym">t.me/meroo_gym</a></div>'};
+var TABS=[["plan","برنامه ۳ ماهه"],["sci","علمی"],["food","تغذیه"],["supp","مکمل‌ها"],["rules","بایدها و نبایدها"],["db","دمبل"],["band","کش"],["bw","وزن بدن"],["drv","رانندگان"],["hair","تکنسین کاشت مو"],["physio","فیزیوتراپی"],["contact","ارتباط با مربی"]];
+var cur="plan";
+function render(){document.getElementById("tabs").innerHTML=TABS.map(function(t){return'<button role="tab" data-t="'+t[0]+'" aria-selected="'+(t[0]==cur)+'">'+t[1]+'</button>'}).join("");
+ document.getElementById("view").innerHTML=S[cur]();hydrate()}
+document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;if(b.dataset.t){cur=b.dataset.t;render()}if(b.dataset.m){month=+b.dataset.m;render()}});
+document.addEventListener("toggle",hydrate,true);
+(function(){var red=matchMedia('(prefers-reduced-motion: reduce)').matches;document.getElementById('nex').dataset.n=Object.keys(X).length;
+document.querySelectorAll('[data-n]').forEach(function(e){var T=+e.dataset.n,t0=null;function st(t){if(t0==null)t0=t;var k=Math.min(1,(t-t0)/1200);e.textContent=Math.round(T*k);if(k<1)requestAnimationFrame(st)}if(red)e.textContent=T;else requestAnimationFrame(st)});
+var W=['سینه و جلو بازو','پا و باسن','سرشانه و شکم','کششی و قدرتی','زیربغل و پشت بازو','فول‌بادی'],i=0,c=0,d=1,el=document.getElementById('type');
+function ty(){var w=W[i];if(red){el.textContent=w;return}c+=d;el.textContent=w.slice(0,c);var dl=90;if(d==1&&c>=w.length){d=-1;dl=1200}else if(d==-1&&c<=0){d=1;i=(i+1)%W.length;dl=300}setTimeout(ty,dl)}ty();
+var tx='برنامه تمرین ◆ حرکات اصلاحی ◆ تغذیه ◆ مکمل ◆ فیزیوتراپی ◆ تمرین با دمبل ◆ تمرین با کش ◆ وزن بدن ◆ رانندگان ◆ تکنسین کاشت مو ◆ ';document.getElementById('tickd').textContent=tx+tx;
+document.getElementById('cta').onclick=function(){cur='plan';render();document.getElementById('tabs').scrollIntoView({behavior:red?'auto':'smooth'})};
+var cv=document.createElement('canvas');cv.setAttribute('aria-hidden','true');cv.style.cssText='position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none';document.body.prepend(cv);var g=cv.getContext('2d'),pt=[],w,h;
+function rs(){w=cv.width=innerWidth;h=cv.height=innerHeight}rs();addEventListener('resize',rs);
+for(var k=0;k<38;k++)pt.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4});
+function pf(){g.clearRect(0,0,w,h);pt.forEach(function(a,k){a.x=(a.x+a.vx+w)%w;a.y=(a.y+a.vy+h)%h;g.fillStyle='rgba(25,224,255,.7)';g.fillRect(a.x,a.y,2,2);for(var m=k+1;m<pt.length;m++){var b=pt[m],dx=a.x-b.x,dy=a.y-b.y,q=dx*dx+dy*dy;if(q<14000){g.strokeStyle='rgba(25,224,255,'+(.22*(1-q/14000))+')';g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}}});if(red)return;if(document.hidden)setTimeout(pf,500);else requestAnimationFrame(pf)}pf();
+})();
+render();
+</script><script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});</script>
+</body></html>
